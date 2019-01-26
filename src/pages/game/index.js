@@ -3,7 +3,7 @@ const $cardsWrapper = createCardsWrapper();
 
 const $memoryCardC = createMemoryCard({
     nameClass: "-front",
-    src: "/img/icon-c.png",
+    src: "img/icon-c.png",
     alt: "Icone de um livro da linguagem C++"
   });
 
