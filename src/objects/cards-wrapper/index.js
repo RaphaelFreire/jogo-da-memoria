@@ -21,7 +21,19 @@ function createCardsWrapper() {
 
      $head.insertBefore($style, null);
 
-     console.log("dentro do card-wrapper");
+     $cardsWrapper.addEventListener("click", event => {
+          const $isActiveMemoryCard = $event.target.closest(".memory-card");
+          let qtdActiveMemoryCard = 0;
+
+          console.log("Origin:", event.target);
+          console.log("closest:", $isActiveMemoryCard);
+
+          if ($isActiveMemoryCard) {
+               console.log("VERDADE");
+          } else {
+               console.log("MENTIRA");
+          }
+     });
 
      return $cardsWrapper;
 }

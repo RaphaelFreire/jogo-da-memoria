@@ -2,8 +2,6 @@ function memoryCard() {
      const $head = document.querySelector("head");
      const $style = document.createElement("style");
 
-     console.log("dentro do arquivo memory-card e fora da arrow-function");
-
      $style.textContent = `
         .memory-card{
             width: 155px;
