@@ -1,8 +1,8 @@
 function memoryCard() {
-     const $head = document.querySelector("head");
-     const $style = document.createElement("style");
+	const $head = document.querySelector("head");
+	const $style = document.createElement("style");
 
-     $style.textContent = `
+	$style.textContent = `
         .memory-card{
             width: 155px;
             height: 155px;
@@ -22,7 +22,8 @@ function memoryCard() {
             position: absolute;
         }
 
-        .memory-card.-active .card{
+        .memory-card.-active .card,
+        .memory-card.-score .card{
             display: none;
         }
 
@@ -42,7 +43,7 @@ function memoryCard() {
             background-color: #d4ded4;
             border-radius: 50%;
             position: absolute;
-        }   
+        }
 
        .card > .icon {
             width: 100px;
@@ -55,45 +56,65 @@ function memoryCard() {
         }
     `;
 
-     $head.insertBefore($style, null);
+	$head.insertBefore($style, null);
 
-     return ({ nameClass, src, alt }) => `
+	return ({ nameClass, src, alt }) => `
         <div class="memory-card" onClick="handleClick(this)">
             <article class="card -front">
                 <img
-                    class="icon" 
-                    src="${src}" 
+                    class="icon"
+                    src="${src}"
                     alt="${alt}"
                 />
             </article>
             <article class="card">
-                <img 
-                    class="icon" 
-                    src="img/icon-collabcode.svg" 
+                <img
+                    class="icon"
+                    src="img/icon-collabcode.svg"
                     alt="O mascote da CollabeCode o Gaio"
                 />
-            </article> 
+            </article>
         </div>
      `;
 }
 
+let score = 0;
+
 const handleClick = $component => {
-     if (qtdActiveMemoryCard < 2) {
-          $component.classList.toggle("-active");
-     }
-
-     if (qtdActiveMemoryCard == 1) {
-          setTimeout(() => {
-
-               const $activeMemoryCards = document.querySelectorAll(
-                    ".memory-card.-active"
-               );
-               
-               $activeMemoryCards.forEach($memoryCard => {
-                    $memoryCard.classList.remove("-active");
-               });
-
-               qtdActiveMemoryCard = 0;
-          }, 1500);
-     }
+	if (!$component.classList.contains("-active")) {
+        activeMemoryCard($component);
+        checkSure();
+	}
 };
+
+function activeMemoryCard($component) {
+	if (qtdActiveMemoryCard < 2) {
+		$component.classList.add("-active");
+	}
+}
+
+function checkSure() {
+	if (qtdActiveMemoryCard == 1) {
+		const $activeMemoryCards = document.querySelectorAll(".memory-card.-active");
+
+		if ($activeMemoryCards[0].querySelector(".-front .icon").getAttribute("src") ==
+			$activeMemoryCards[1].querySelector(".-front .icon").getAttribute("src")
+		) {
+			score++;
+			console.log("Score:", score);
+
+			$activeMemoryCards.forEach($memoryCard => {
+				$memoryCard.classList.add("-score");
+				$memoryCard.classList.remove("-active");
+			});
+		} else {
+			setTimeout(() => {
+				$activeMemoryCards.forEach($memoryCard => {
+					$memoryCard.classList.remove("-active");
+				});
+
+				qtdActiveMemoryCard = 0;
+			}, 1500);
+		}
+	}
+}
