@@ -12,12 +12,12 @@ function createCardsWrapper() {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      padding-top: 10px; 
+      padding-top: 5px; 
       width: 100vw; 
     }
 
     .cards-wrapper > .memory-card{
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
   `;
 
