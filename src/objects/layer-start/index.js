@@ -2,7 +2,16 @@ const layerStart = (function() {
 	const module = {};
 
 	module.handleClick = $component => {
-		$component.remove();
+    const $gameButton = $component.querySelector(".game-button");
+    const $transparencyLayer = $component.querySelector(".transparency-layer");
+
+    $gameButton.classList.add("-disable");
+    $transparencyLayer.classList.add("-disable");
+    
+    setTimeout(()=>{
+      $component.remove();
+    }, 500)
+   
 	};
 
 	module.render = content => {

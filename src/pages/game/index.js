@@ -4,7 +4,7 @@
 	const $cardsWrapper = createCardsWrapper();
 	const createMemoryCard = memoryCard.create();
 	const $pointBar = pointBar.create();
-	const $layerStart = layerStart.render("vai");
+	const $layerStart = layerStart.render("start");
 
 	const $memoryCardC = createMemoryCard({
 		src: "img/icon-c.png",
