@@ -25,7 +25,7 @@ const logoCollabcode = (function() {
 		module._style();
 
 		return `<figure class="logo-collabcode">
-										<img class="logo" src="/img/icon-collabcode.svg">
+										<img class="logo" src="../img/icon-collabcode.svg">
 								</figure>`;
 	};
 
