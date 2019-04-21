@@ -12,8 +12,7 @@ const formSignup = (function() {
 		`;
 
 		$head.insertAdjacentElement("beforeend", $style);
-	}
-
+	};
 
 	module._children = () => {
 		const $emailLabel = labelCollabcode.render("E-mail");
@@ -33,30 +32,31 @@ const formSignup = (function() {
 			type: "password"
 		});
 
-		const $confirmpasswordLabel = labelCollabcode.render("Confirm Password");
+		const $confirmpasswordLabel = labelCollabcode.render(
+			"Confirm Password"
+		);
 		const $confirmpasswordInput = inputCollabcode.render({
 			placeholder: "*******",
 			type: "password"
 		});
 
 		const $btn = btnCollabcode.render("Signup");
-    
-    return `
-      ${$emailLabel} ${$emailInput}
-      ${$usernameLabel} ${$usernameInput}
-      ${$passwordLabel} ${$passwordInput}
+
+		return `
+			${$emailLabel} ${$emailInput}
+			${$usernameLabel} ${$usernameInput}
+			${$passwordLabel} ${$passwordInput}
 			${$confirmpasswordLabel} ${$confirmpasswordInput}
 			${$btn}
-    `;
+		`;
 	};
 
 	module.render = () => {
-
 		module._style();
 
 		return `
-    <form class="form-signup" action="" method="POST">${module._children()}</form>
-  `;
+			<form class="form-signup" action="" method="POST">${module._children()}</form>
+			`;
 	};
 
 	return {

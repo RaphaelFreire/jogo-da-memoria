@@ -1,6 +1,5 @@
 const flatButton = (function() {
 	const module = {};
-
 	module._id = 0;
 
 	module._style = active => {
@@ -8,16 +7,16 @@ const flatButton = (function() {
 		const $style = document.createElement("style");
 
 		$style.textContent = `
-      .flat-button-${module._id}{
-        background-color: ${active ? "#f25a70" : "#eae6da"};
-        color: ${active ? "#fff" : "#fffcee"};
-        font-size: 24px;
-        font-weight: bold;
-        width: 50%;
+			.flat-button-${module._id}{
+				background-color: ${active ? "#f25a70" : "#eae6da"};
+				color: ${active ? "#fff" : "#fffcee"};
+				font-size: 24px;
+				font-weight: bold;
+				width: 50%;
 				height: 176px;
 				text-transform: uppercase;
 			}
-    `;
+   		 `;
 		$head.insertAdjacentElement("beforeend", $style);
 	};
 
