@@ -1,13 +1,13 @@
-const eyeCollabcode = (function(){
-          const module = {};
+const eyeCollabcode = (function() {
+	const module = {};
 
-          module._style = () => {};
+	module._style = () => {};
 
-          module.render = () =>`
+	module.render = () => `
                     <label>Mostrar senha</label>
           `;
 
-          return {
-                    render: module.render
-          }
+	return {
+		render: module.render
+	};
 })();

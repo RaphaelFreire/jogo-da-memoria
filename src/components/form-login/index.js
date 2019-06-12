@@ -27,6 +27,8 @@ const formLogin = (function() {
 			type: "password"
 		});
 
+		const $eyeCollabcode = eyeCollabcode.render();
+
 		const $btn = btnCollabcode.render("Login");
 		const $linkCollabcode = linkCollabcode.render({
 			href: "/",
@@ -35,7 +37,8 @@ const formLogin = (function() {
 
 		return `
                               ${$emailLabel} ${$emailInput}
-                              ${$passwordLabel} ${$passwordInput}
+			${$passwordLabel} ${$passwordInput}
+			${$eyeCollabcode}
                               ${$linkCollabcode}
                               ${$btn}
                               
