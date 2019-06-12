@@ -6,17 +6,17 @@ const logoCollabcode = (function() {
 		const $style = document.createElement("style");
 
 		$style.textContent = `
-    .logo-collabcode{
-			background-color: #fff;
-			display: inline-block;
-			border: solid 40px #fff;
-			border-radius: 50%;
-		}
+			.logo-collabcode{
+				background-color: #fff;
+				display: inline-block;
+				border: solid 40px #fff;
+				border-radius: 50%;
+			}
 
-		 .logo-collabcode > .logo{
-			width: 175px;
-    }
-  `;
+			.logo-collabcode > .logo{
+				width: 175px;
+			}
+		`;
 
 		$head.insertAdjacentElement("beforeend", $style);
 	};
@@ -25,8 +25,8 @@ const logoCollabcode = (function() {
 		module._style();
 
 		return `<figure class="logo-collabcode">
-										<img class="logo" src="img/icon-collabcode.svg">
-								</figure>`;
+				<img class="logo" src="img/icon-collabcode.svg">		
+			</figure>`;
 	};
 
 	return {
