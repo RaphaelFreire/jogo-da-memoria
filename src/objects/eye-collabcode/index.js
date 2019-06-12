@@ -29,7 +29,8 @@ const eyeCollabcode = (function() {
 		module._style();
 
 		return `
-                              <label 
+                              <label
+                              for="password"
                               class="eye-collabcode"
                               onClick="eyeCollabcode.handleClick()">Mostrar senha</label>
                     `;
