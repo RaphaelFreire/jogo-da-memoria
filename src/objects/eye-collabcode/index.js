@@ -7,7 +7,7 @@ const eyeCollabcode = (function() {
 
 		$style.textContent = `
                               .eye-collabcode{
-                                        background-image: url(/img/eye.png);
+                                        background-image: url(img/eye.png);
                                         background-repeat: no-repeat;
                                         background-position: center;
                                         display: block;
