@@ -30,7 +30,7 @@ const formLogin = (function() {
 
 		const $eyeCollabcode = eyeCollabcode.render({ attrFor: "password" });
 
-		const $btn = btnCollabcode.render("Login");
+		const $btn = btnCollabcode.render({content: "Login", path: "game"});
 		const $linkCollabcode = linkCollabcode.render({
 			href: "/",
 			content: "Esqueci minha senha"
