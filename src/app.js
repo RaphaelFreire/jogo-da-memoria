@@ -1,11 +1,19 @@
 (function() {
-	const { hash } = window.location;
+          const { hash } = window.location;
+          const paths = [];
 
-	if (hash === "#/signup") {
-		signup();
-	} else {
-		login();
-	}
+          paths[""] = login;
+          paths["#/signup"] = signup;
+          paths["#/game"] = game;
+
+          paths[hash]();
+
+
+	// if (hash === "#/signup") {
+	// 	signup();
+	// } else {
+	// 	login();
+	// }
 
 	// $signup();
 })();
