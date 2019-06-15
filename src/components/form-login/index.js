@@ -17,6 +17,7 @@ const formLogin = (function() {
 	module._children = () => {
 		const $emailLabel = labelCollabcode.render("Username ou E-mail");
 		const $emailInput = inputCollabcode.render({
+			id: "email",
 			placeholder: "raphaelmachadofreire@gmail.com",
 			type: "email"
 		});
@@ -30,11 +31,12 @@ const formLogin = (function() {
 
 		const $eyeCollabcode = eyeCollabcode.render({ attrFor: "password" });
 
-		const $btn = btnCollabcode.render({content: "Login", path: "game"});
 		const $linkCollabcode = linkCollabcode.render({
 			href: "/",
 			content: "Esqueci minha senha"
 		});
+
+		const $btn = btnCollabcode.render({ content: "Login", path: "game" });
 
 		return `
                               ${$emailLabel} ${$emailInput}
