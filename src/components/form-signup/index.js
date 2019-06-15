@@ -34,9 +34,7 @@ const formSignup = (function() {
 			type: "password"
 		});
 
-		const $confirmpasswordLabel = labelCollabcode.render(
-			"Confirm Password"
-		);
+		const $confirmpasswordLabel = labelCollabcode.render("Confirm Password");
 		const $confirmpasswordInput = inputCollabcode.render({
 			id: "confirm",
 			placeholder: "*******",
