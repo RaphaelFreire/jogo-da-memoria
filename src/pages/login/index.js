@@ -1,4 +1,4 @@
-const login = function() {
+const login = (function() {
 	const $root = document.querySelector("#root");
 	const $loginButton = flatButton.render("Log in", true, "login");
 	const $signupButton = flatButton.render("Sign Up", false, "signup");
@@ -11,4 +11,4 @@ const login = function() {
 	$root.insertAdjacentHTML("beforeend", $signupButton);
 	$root.insertAdjacentHTML("beforeend", $logoWrapper);
 	$root.insertAdjacentHTML("beforeend", $formLogin);
-};
+});
